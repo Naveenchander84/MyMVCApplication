@@ -88,6 +88,38 @@ namespace MyMVCApplication.Controllers
         {
             return RedirectToRoute("Default1");
         }
- 
+
+        public JsonResult Getnewdata()
+        {
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpID = 9999;
+            obj.EmpName = "David";
+            obj.Salary = 37000;
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpID = 3000;
+            obj1.EmpName = "James";
+            obj1.Salary = 25000;
+
+            List<EmployeeModel> dbobj = new List<EmployeeModel>();
+            dbobj.Add(obj);
+            dbobj.Add(obj1);
+            return Json(dbobj,JsonRequestBehavior.AllowGet);
+        }
+
+        public FileResult Getfile()
+        {
+            //return File("~/web.config", "text/plain");
+            //return File("~/web.config", "application/xml");
+            return File("~/web.config", "application/xml","my test file");
+        }
+
+        public ContentResult GetContent()
+        {
+
+            //return Content("Welcome to MVC");  //string format
+            //return Content("<p style='color:Green'> Welcome to MVC </p>"); //style
+            return Content("<script>alert('Welcome to MVC')</script>"); //alert
+        }
     }
 }
