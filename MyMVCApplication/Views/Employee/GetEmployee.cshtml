@@ -1,0 +1,29 @@
+﻿@*@model MyMVCApplication.Models.EmployeeModel*@
+@model List<MyMVCApplication.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "GetEmployee";
+}
+
+<h2>GetEmployee page is called</h2>
+
+@*@Model.EmpID <br />
+@Model.EmpName <br />
+@Model.Salar <br />*@
+
+@foreach (var item in Model)
+    {
+
+    @item.EmpID    <span> -</span>
+    @item.EmpName <span> -</span>
+    @item.Salary <br />
+
+    }
+@foreach (var item in ViewBag.EmpInfo)
+{
+
+    @item.EmpID    <span style="color:red">test-</span>
+    @item.EmpName <span> -</span>
+    @item.Salary <br />
+
+}

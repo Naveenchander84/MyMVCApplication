@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Getdata";
+}
+
+<h2>Getdata of the employees</h2>
+
+@Html.Partial("_MyPartialView", (List<MyMVCApplication.Models.EmployeeModel>)ViewBag.EmpInfo)
+<br />
+
+@{
+    Html.RenderPartial("_MyPartialView", (List<MyMVCApplication.Models.EmployeeModel>)ViewBag.EmpInfo);
+
+        }

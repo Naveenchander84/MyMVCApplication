@@ -1,0 +1,35 @@
+﻿
+@*<table>
+        <tr>
+            <th>EmpName</th>
+            <th>EmpID</th>
+            <th>Salary</th>
+        </tr>
+
+        <tr>
+            <td>Mike</td>
+            <td>123</td>
+            <td>45000</td>
+        </tr>
+
+        <tr>
+            <td>Adam</td>
+            <td>456</td>
+            <td>90000</td>
+        </tr>
+    </table>*@
+
+@model List<MyMVCApplication.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "GetEmployee";
+}
+
+@foreach (var item in ViewBag.EmpInfo)
+{
+
+    @item.EmpID    <span style="color:red">test-</span>
+    @item.EmpName <span> -</span>
+    @item.Salary <br />
+
+}
