@@ -72,7 +72,14 @@
     </style>
 </head>
 <body>
-    @RenderSection("newsection", false)
+    @if (IsSectionDefined("newsection"))
+    {
+        @RenderSection("newsection", false)
+    }
+    else
+   {
+    <p>Section is not defined</p>
+    }
     @RenderBody()
     <!-- Footer -->
     <footer class="container-fluid bg-4 text-center">
