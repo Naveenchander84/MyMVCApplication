@@ -45,7 +45,7 @@ namespace MyADO.NETMVC.Models
             cmd.Parameters.AddWithValue("@EmpID", obj.EmpID);
             cmd.Parameters.AddWithValue("@EmpName", obj.EmpName);
             cmd.Parameters.AddWithValue("@EmpSalary", obj.EmpSalary);
-            object ob = cmd.ExecuteScalar();
+            object ob = cmd.ExecuteNonQuery();
             int i = Convert.ToInt32(ob);
             return i;
         }
